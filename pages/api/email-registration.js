@@ -9,7 +9,8 @@ function buildPath() {
     //You can specify as many path segments as you like.
     //This methos normalize the path for every OS and make sure to avoid errors
     // more info https://blog.logrocket.com/mastering-node-js-path-module/
-    return path.join(process.cwd(),'/tmp', 'data', 'data.json');
+    // return path.join(process.cwd(), 'data', 'data.json');
+    return path.join('/tmp','data.json');
   }
 
 // Had created the path and now i read the file to feed the API
