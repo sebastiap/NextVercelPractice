@@ -9,9 +9,10 @@ function buildPath() {
     //You can specify as many path segments as you like.
     //This methos normalize the path for every OS and make sure to avoid errors
     // more info https://blog.logrocket.com/mastering-node-js-path-module/
-    // return path.join(process.cwd(), 'data', 'data.json');
-    return path.join('/tmp','data.json');
+    return path.join(process.cwd(), 'data', 'data.json');
   }
+
+
 
 // Had created the path and now i read the file to feed the API
   function extractData(filePath) {
@@ -60,7 +61,7 @@ export default function handler (req,res) {
             return ev;
           });
         // with this we overwrite the file with or without changes
-        fs.writeFileSync(filePath, JSON.stringify({ events_categories, allEvents: newAllEvents }));
+        fs.writeFileSync('/tmp/data/data.json', JSON.stringify({ events_categories, allEvents: newAllEvents }));
 
         res.status(200).json({message:`You have been successfully authenticated with ${email} for this event.`});
     }
