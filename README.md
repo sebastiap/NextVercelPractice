@@ -32,3 +32,45 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+## Directory Structure
+
+### Styles
+In this directory, the styles are located.
+
+### Public
+In this directory, the public resources like images and fonts are located. All the static files are stored here.
+Only files in this directory are accessible to Next.
+
+### Pages
+All the pages that will be routed and used in our app. Inside on the "api" folder, the backend files are stored.
+Next route the directories and pages inside this folder automatically.
+
+
+## Dynamic Routing
+
+### Dynamic Files
+When called with brackets , we can create a dynamic file. For example [id].js
+This files will be called with different routes and paths.
+
+### Dynamic Directory
+We can also create dynamic directories naming a directory with brackets. The routing will follow the same principle as for static files in Next.
+
+### getServerSideProps function
+If you export a function called getServerSideProps (Server-Side Rendering) from a page, Next.js will pre-render this page on each request using the data returned by getServerSideProps.
+The props returned in this function will be passed to the page component as props.
+https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props
+
+### getStaticProps function
+If you export a function called getStaticProps (Static Site Generation) from a page, Next.js will pre-render this page at build time using the props returned by getStaticProps.
+The props returned in this function will be passed to the page component as props.
+https://nextjs.org/docs/basic-features/data-fetching/get-static-props
+
+## API & Backend
+
+## api folder
+Next provides us with a feature that allows us to use any file in the api folder as an endpoint.
+This feature can help us to create a backend for our applications in the same project.
+For example:
+To access the endpoint on hello.js you can go to the path : http://localhost:3000/api/hello
