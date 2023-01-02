@@ -21,8 +21,22 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: space-between;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   /* padding: 2rem; */
+}
+
+.mainEvents,.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  /* padding: 2rem; */
+}
+
+.mainEvents{
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
 }

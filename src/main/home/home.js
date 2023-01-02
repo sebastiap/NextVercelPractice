@@ -8,10 +8,10 @@ const Home = ({data}) => {
     return (
         <main className={Styles.main}>
         <div >
-                {data.map((ev) => (
+                {data.map((ev,index) => (
                     <Link key={ev.id} href={`/events/${ev.id}`} className={Styles.mainEvents}>
                     
-                        <div className="image">
+                        <div className={index % 2?"image animate__animated animate__fadeInLeft":"image animate__animated animate__fadeInRight"}>
                         <Image width={600} height={400} alt={ev.title} src={ev.image} />
                         </div>
                         <div className={Styles.content}>

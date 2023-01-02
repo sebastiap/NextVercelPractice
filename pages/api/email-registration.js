@@ -12,8 +12,6 @@ function buildPath() {
     return path.join(process.cwd(), 'data', 'data.json');
   }
 
-
-
 // Had created the path and now i read the file to feed the API
   function extractData(filePath) {
       //this extract the data of the json file
@@ -61,7 +59,7 @@ export default function handler (req,res) {
             return ev;
           });
         // with this we overwrite the file with or without changes
-        fs.writeFileSync('/tmp/data/data.json', JSON.stringify({ events_categories, allEvents: newAllEvents }));
+        fs.writeFileSync(filePath, JSON.stringify({ events_categories, allEvents: newAllEvents }));
 
         res.status(200).json({message:`You have been successfully authenticated with ${email} for this event.`});
     }
