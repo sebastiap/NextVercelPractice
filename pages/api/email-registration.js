@@ -2,7 +2,7 @@ import path from 'path';
 import fs from 'fs';
 
 function buildPath() {
-    //The process.cwd() method is an inbuilt application programming interface of the process module which is used to get
+    //The process.cwd() method is an inbuilt application programming interface of the process module
     // This method returns a string specifying the current working directory of the node.js process. 
 
     //The path.join() method joins the specified path segments into one path.
