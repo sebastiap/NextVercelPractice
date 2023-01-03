@@ -1,16 +1,17 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from '../../../styles/Home.module.css'
+import styles from '../../../styles/Events.module.css'
 
 const EventsCatPage = ({data,city}) => {
     return (
         <div className={styles.eventContainer}>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         <h1>Events in {city.toUpperCase()}</h1>
-        {data?.map((ev) => (
-          <Link key={ev.id} href={`/events/${city}/${ev.id}`}>
+        {data?.map((ev,index) => (
+          <Link key={ev.id} href={`/events/${city}/${ev.id}`} className={styles.link} >
             {/* <Link legacyBehavior key={ev.id} href={`/events/${ev.id}`} passHref>
               <a> */}
-                <div className="image">
+                <div className={index % 2?"image animate__animated animate__fadeInLeft":"image animate__animated animate__fadeInRight"}>
                   <Image width={600} height={400} alt={ev.title} src={ev.image} />
                 </div>
                 <div className="content">
@@ -59,7 +60,7 @@ export async function getStaticProps(context) {
  const {allEvents} = await import ('/data/data.json');
  const id = context.params.cat;
  const localEvents = allEvents.filter((ev) => id === ev.city);
- console.log(localEvents);
+//  console.log(localEvents);
 
  return {props:{
    data:localEvents,
