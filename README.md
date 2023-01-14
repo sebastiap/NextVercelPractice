@@ -71,6 +71,10 @@ https://nextjs.org/docs/basic-features/data-fetching/get-static-props
 
 ## api folder
 Next provides us with a feature that allows us to use any file in the api folder as an endpoint.
-This feature can help us to create a backend for our applications in the same project.
+This feature can help us to create a backend for our applications in the same project. The api folder must be inside of the pages folder for Next to work this files as API's.
+
+Important:
+The files in this folder will render server side code and will not deploy React components!
+
 For example:
 To access the endpoint on hello.js you can go to the path : http://localhost:3000/api/hello

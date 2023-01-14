@@ -31,8 +31,6 @@ export default function handler (req,res) {
           message: 'Events data not found',
         });
       }
-    
-
 
     if (method === 'POST'){
         const {email,eventId} = req.body;
