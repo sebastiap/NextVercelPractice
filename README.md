@@ -78,3 +78,6 @@ The files in this folder will render server side code and will not deploy React 
 
 For example:
 To access the endpoint on hello.js you can go to the path : http://localhost:3000/api/hello
+
+## Next/Head
+Next provides a special JSX tag for adding head elements to each page, which will change the title and info about that page. This is for helping the SEO.

@@ -2,10 +2,17 @@ import Styles from '/styles/Home.module.css'
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { Fragment } from 'react'
+import Head from 'next/head'
 
 
 const Home = ({data}) => {
     return (
+        <Fragment>
+        <Head>
+            <title>Coleccion de experiencias</title>
+            <meta name="description" content="Una coleccion de mis experiencias"/>
+        </Head>
         <main className={Styles.main}>
         <div >
                 {data.map((ev,index) => (
@@ -23,6 +30,7 @@ const Home = ({data}) => {
                 ))}
         </div>
         </main>
+        </Fragment>
     )
 }
 export default Home;

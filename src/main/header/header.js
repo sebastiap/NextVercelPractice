@@ -8,7 +8,7 @@ return (
     <header className={Styles.header}>
         <Link href="/">Home</Link>
         <Link href="/events">Events</Link>
-        <Link href="/collections">Games</Link>
+        <Link href="/games">Games</Link>
         <Link href="/about">About</Link>
         <Link href="/auth">Login</Link>
     </header>

@@ -1,8 +1,10 @@
-import {useState,useRef} from 'react';
-
+import {useState,useRef, Fragment} from 'react';
+import Head from 'next/head';
 import Image from 'next/image';
 import Eventstyles from '../../../styles/Events.module.css'
 import { useRouter } from 'next/router';
+
+import { MongoClient } from 'mongodb';
 
 const EventsPage = ({data}) => {
   const inputemail = useRef();
@@ -48,6 +50,11 @@ const EventsPage = ({data}) => {
     }
   };
     return (
+      <Fragment>
+      <Head>
+      <title>{data.title}</title>
+      <meta name="description" content={data.title}/>
+      </Head>
         <div className={Eventstyles.registrationPage}>
             <div>
               
@@ -76,19 +83,33 @@ const EventsPage = ({data}) => {
             </div>
           
         </div>
+      </Fragment>
     )
 }
 
 export default EventsPage;
 
 // Generates `/posts/1` and `/posts/2`
+let thisgame ={} ;
+let alldbGames =[];
+
 export async function getStaticPaths() {
   const {allEvents} = await import ('/data/data.json');
-  const allPaths = allEvents.map(path => 
-      {return {
+
+  const client = await new MongoClient("mongodb+srv://prueba:prueba@cluster0.mpljszi.mongodb.net/events?retryWrites=true&w=majority");
+  const db = client.db()
+  const GamesColection = db.collection('mygames');
+  const gamedata = await GamesColection.find().toArray();
+  alldbGames = gamedata.map(game => ({...game,_id:game._id.toString()}));
+  console.log(alldbGames);
+  // const Games = alldbGames.filter((ev) => id === ev.type);
+  
+  const allPaths = alldbGames.map(path => 
+    {
+        return {
         params: {
-          cat:path.city,
-          id: path.id,
+          type:path.type,
+          id: path.id
         }
   };
 });
@@ -101,12 +122,16 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   // this import is a promise that is resolved with async and await
   const id = context.params.id;
-  const {allEvents} =  await import ('/data/data.json');
-  const EventData = allEvents.find(event => event.id === id)
-
+  // const id = context.params.id;
+  // const {allEvents} =  await import ('/data/data.json');
+  // const EventData = context.params;
+  // thisgame = alldbGames.find(game => (game.id === id));
+  // console.log(alldbGames);
+  // console.log(thisgame);
+  // console.log(id);
   return {
       props: {
-          data: EventData,
+          data: [],
       }
   }
 }

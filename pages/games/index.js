@@ -3,16 +3,20 @@ import { MongoClient } from 'mongodb';
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { Fragment } from 'react';
+import Head from 'next/head';
 
 
 const GamesPage = ({data}) => {
     return (
-        <>
-        {/* <h1>Eventos</h1> */}
+    <Fragment>
+      <Head>
+      <title>Coleccion de Juegos</title>
+      <meta name="description" content="Coleccion de Juegos"/>
+      </Head>
         <div >
                 {data.map((ev) => (
-                    <Link key={ev.id} href={`/events/${ev.id}`} className={Styles.mainEvents}>
-                    
+                    <Link key={ev.id} href={`/games/${ev.id}`} className={Styles.mainEvents}>
                         <div className="image">
                         <Image width={600} height={400} alt={ev.title} src={ev.image} />
                         </div>
@@ -24,7 +28,7 @@ const GamesPage = ({data}) => {
                     </Link>
                 ))}
         </div>
-        </>
+        </Fragment>
     )
 }
 
@@ -36,18 +40,14 @@ export async function getStaticProps() {
 const client = await new MongoClient("mongodb+srv://prueba:prueba@cluster0.mpljszi.mongodb.net/events?retryWrites=true&w=majority");
 const db = client.db()
 
-const GamesColection = db.collection('mygames');
-const gamedata = await GamesColection.find().toArray();
-// const alldbGames = JSON.stringify(gamedata);
-// console.log ("El tipo de dato es " , typeof allGames);
-// I need to convert the _id into an string to make this work properly.
-const alldbGames = gamedata.map(game => ({...game,_id:game._id.toString()}))
-console.log ("El contenido es " ,  gamedata);
+const GamesColection = db.collection('gametypes');
+const typedata = await GamesColection.find().toArray();
+const allGameTypes = typedata.map(game => ({...game,_id:game._id.toString()}))
 
 
   return {
       props: {
-          data: alldbGames,
+          data: allGameTypes,
       }
   }
 }
