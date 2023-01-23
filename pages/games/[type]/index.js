@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import { MongoClient } from 'mongodb';
 import Image from 'next/image';
-import styles from '../../../styles/Events.module.css'
+import styles from '../../../styles/Games.module.css'
 import { Fragment } from 'react';
 
 const EventsCatPage = ({data,type}) => {
@@ -11,18 +11,18 @@ const EventsCatPage = ({data,type}) => {
       <Head>
       <title>Juegos {type}</title>
       <meta name="description" content={data.description}/>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
       </Head>
-        <div className={styles.eventContainer}>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         <h1>Games {type.toUpperCase()}</h1>
-        {data?.map((ev,index) => (
-          <Link key={ev.id} href={`/games/${type}/${ev.id}`} className={styles.link} >
+        <div className={styles.GameGrid}>
+         {data?.map((ev,index) => (
+          <Link key={ev.id} href={`/games/${type}/${ev.id}`} >
             {/* <Link legacyBehavior key={ev.id} href={`/events/${ev.id}`} passHref>
               <a> */}
                 <div className={index % 2?"image animate__animated animate__fadeInLeft":"image animate__animated animate__fadeInRight"}>
                   <Image width={600} height={400} alt={ev.title} src={ev.image} />
                 </div>
-                <div className="content">
+                <div className={styles.content}>
                   <h2> {ev.title} </h2>
                   <p> {ev.description} </p>
                 </div>
