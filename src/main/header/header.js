@@ -10,7 +10,7 @@ return (
         <Link href="/events">Events</Link>
         <Link href="/games">Games</Link>
         <Link href="/about">About</Link>
-        <Link href="/auth">Login</Link>
+        <Link href="/auth">Add</Link>
     </header>
 )
 

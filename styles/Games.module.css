@@ -12,13 +12,17 @@ margin: 1%;
 }
 
 .GameGrid {
-  /* text-align: center; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  /* padding-left: 18rem; */
-  /* padding: 30rem; */
   padding: 2rem;
-  /* padding-right: 0; */
+  gap:2rem;
+  width: 100%;
+}
+
+.GameGrid4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 2rem;
   gap:2rem;
   width: 100%;
 }

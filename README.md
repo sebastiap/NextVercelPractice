@@ -47,7 +47,6 @@ Only files in this directory are accessible to Next.
 All the pages that will be routed and used in our app. Inside on the "api" folder, the backend files are stored.
 Next route the directories and pages inside this folder automatically.
 
-
 ## Dynamic Routing
 
 ### Dynamic Files
@@ -78,6 +77,12 @@ The files in this folder will render server side code and will not deploy React 
 
 For example:
 To access the endpoint on hello.js you can go to the path : http://localhost:3000/api/hello
+
+### Operations on Files
+Since Next operates with Node, we can use the built in library "fs" to make syncronous and asyncronous operations with files.
+
+### Operations on MongoBD
+With MongoClient we can use the mongodb site to connect to our own MongoDB database. See db-manager.js .
 
 ## Next/Head
 Next provides a special JSX tag for adding head elements to each page, which will change the title and info about that page. This is for helping the SEO.

@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
 // import AuthForm from '../src/components/auth/auth-form';
-import AuthForm from '../src/components/auth/auth';
+import AdderForm from '../src/components/auth/gameadder';
 
 function AuthPage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -23,7 +23,7 @@ function AuthPage() {
 //     return <p>Loading...</p>;
 //   }
 
-  return <AuthForm />;
+  return <AdderForm />;
 }
 
 export default AuthPage;

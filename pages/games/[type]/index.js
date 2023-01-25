@@ -14,7 +14,7 @@ const EventsCatPage = ({data,type}) => {
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
       </Head>
         <h1>Games {type.toUpperCase()}</h1>
-        <div className={styles.GameGrid}>
+        <div className={data.length % 2 ?styles.GameGrid : styles.GameGrid4}>
          {data?.map((ev,index) => (
           <Link key={ev.id} href={`/games/${type}/${ev.id}`} >
             {/* <Link legacyBehavior key={ev.id} href={`/events/${ev.id}`} passHref>
