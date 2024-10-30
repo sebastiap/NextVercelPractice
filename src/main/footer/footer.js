@@ -4,7 +4,7 @@ const Footer = () => {
 
     return (
         <footer className={Styles.footer}>
-            <p> © 2022 Time to Code - A Project Built with Next.js </p>
+            <p> © 2022 Spika Games - Built with Next.js </p>
         </footer>
     )
     

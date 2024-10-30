@@ -57,7 +57,7 @@ const EventsPage = ({data}) => {
       </Head>
         <div className={Eventstyles.registrationPage}>
             <div>
-              
+                <h1> {data.title}</h1>
                 <div className="image">
                   <Image width={1000} height={600} alt={data.title} src={data.image} />
                 </div>
@@ -68,7 +68,7 @@ const EventsPage = ({data}) => {
                 {/* <div className={Eventstyles.registrationForm}> */}
                 
                 <form onSubmit={onSubmit} className={Eventstyles.registrationForm}>
-                  <p>GET REGISTERED FOR THIS EVENT</p>
+                  <p>GET A COPY OF THIS GAME</p>
                   <label htmlFor="email"/>
                   <input
                     ref={inputemail}
@@ -101,7 +101,7 @@ export async function getStaticPaths() {
   const GamesColection = db.collection('mygames');
   const gamedata = await GamesColection.find().toArray();
   alldbGames = gamedata.map(game => ({...game,_id:game._id.toString()}));
-  console.log(alldbGames);
+  //console.log(alldbGames);
   // const Games = alldbGames.filter((ev) => id === ev.type);
   
   const allPaths = alldbGames.map(path => 
@@ -122,16 +122,19 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   // this import is a promise that is resolved with async and await
   const id = context.params.id;
-  // const id = context.params.id;
-  // const {allEvents} =  await import ('/data/data.json');
-  // const EventData = context.params;
-  // thisgame = alldbGames.find(game => (game.id === id));
-  // console.log(alldbGames);
-  // console.log(thisgame);
-  // console.log(id);
+  //const id = context.params.id;
+  const client = await new MongoClient("mongodb+srv://prueba:prueba@cluster0.mpljszi.mongodb.net/events?retryWrites=true&w=majority");
+  const db = client.db()
+  const GamesColection = db.collection('mygames');
+  const gamedata = await GamesColection.find().toArray();
+  alldbGames = gamedata.map(game => ({...game,_id:game._id.toString()}));
+  thisgame = alldbGames.find(game => (game.id === id));
+  //console.log(alldbGames);
+  //console.log(thisgame);
+  //console.log(id);
   return {
       props: {
-          data: [],
+          data: thisgame,
       }
   }
 }

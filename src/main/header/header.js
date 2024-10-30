@@ -9,8 +9,8 @@ return (
         <Link href="/">Home</Link>
         <Link href="/events">Events</Link>
         <Link href="/games">Games</Link>
+        <Link href="/auth">Add Game</Link>
         <Link href="/about">About</Link>
-        <Link href="/auth">Add</Link>
     </header>
 )
 

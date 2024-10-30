@@ -13,7 +13,7 @@ const EventsCatPage = ({data,type}) => {
       <meta name="description" content={data.description}/>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
       </Head>
-        <h1>Games {type.toUpperCase()}</h1>
+        <h1> {type.toUpperCase() } GAMES</h1>
         <div className={data.length % 2 ?styles.GameGrid : styles.GameGrid4}>
          {data?.map((ev,index) => (
           <Link key={ev.id} href={`/games/${type}/${ev.id}`} >

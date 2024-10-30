@@ -21,7 +21,7 @@ const GamesPage = ({data}) => {
                         <Image width={600} height={400} alt={ev.title} src={ev.image} />
                         </div>
                         <div className={Styles.content}>
-                        <h2> {ev.title} </h2>
+                        <h2> {ev.title}</h2>
                         <p> {ev.description} </p>
                         </div>
                 
