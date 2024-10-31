@@ -40,3 +40,20 @@
   margin-top: 1.5%;
   margin-bottom: 1.5%;
 }
+
+
+@media screen and (max-width: 455px)  {
+  
+
+  .header {
+    width: 100%;
+    font-size: 1rem;
+  }
+  
+  .footer {
+    width: 100%;
+    font-size: 1.5rem;
+    height: 10vh;
+  }
+  }
+  

@@ -59,9 +59,9 @@ const EventsPage = ({data}) => {
             <div>
                 <h1> {data.title}</h1>
                 <div className="image">
-                  <Image width={1000} height={600} alt={data.title} src={data.image} />
+                  <Image  alt={data.title} src={data.image} />
                 </div>
-                <div className={Eventstyles.content}>
+                <div className={Eventstyles.content2}>
                   <h2> {data.title} </h2>
                   <p> {data.description} </p>
                 </div>

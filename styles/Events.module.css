@@ -7,6 +7,17 @@
   /* background-color: #f5aba7; */
 }
 
+.content2 {
+  padding: 1rem;
+  color: #f7dba7;
+  margin-bottom: 1rem;
+}
+
+.registrationPage img{
+  width: 1000px;
+  height: 600px;
+ }
+
 .eventContainer .link{
 margin: 1%;
 }
@@ -74,15 +85,6 @@ flex-direction: column;
 justify-content: center;
 align-items:space-between;
 }
-
-
-
-
-
-
-
-
-
 
 .description {
   display: inherit;
@@ -228,6 +230,8 @@ align-items:space-between;
   background-clip: content-box;
 }
 
+
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
@@ -252,6 +256,13 @@ align-items:space-between;
 
 /* Mobile */
 @media (max-width: 700px) {
+
+
+  .registrationPage img{
+    width: 50%;
+    height: 30%;
+   }
+
   .content {
     padding: 4rem;
   }
@@ -259,8 +270,19 @@ align-items:space-between;
   .grid {
     grid-template-columns: 1fr;
     margin-bottom: 120px;
-    max-width: 320px;
+    /*max-width: 320px;*/
     text-align: center;
+  }
+
+
+  .mainEvents {
+    /* text-align: center; */
+    display: grid;
+    grid-template-columns: 35% auto;
+    padding: 2rem;
+    padding-right: 0; 
+    /* gap:0; */
+    width: 100%;
   }
 
   .card {
@@ -325,6 +347,11 @@ align-items:space-between;
     );
     z-index: 1;
   }
+
+  .content{
+    background: rgb(84 255 49 / 48%);
+    color: black;
+  }
 }
 
 /* Tablet and Smaller Desktop */
@@ -332,6 +359,13 @@ align-items:space-between;
   .grid {
     grid-template-columns: repeat(2, 50%);
   }
+
+  .content{
+    background: rgb(84 255 49 / 48%);
+    color: black;
+  }
+
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -352,4 +386,36 @@ align-items:space-between;
   to {
     transform: rotate(0deg);
   }
+}
+
+@media screen and (max-width: 435px)  {
+
+  .registrationPage img{
+    width: 50%;
+    height: 50%;
+   }
+  
+
+.mainEvents {
+  height: 88%;
+}
+
+.content{
+  background: rgb(84 255 49 / 48%);
+  color: black;
+  height: 88%;
+}
+
+.content2 {
+  padding: 2rem;
+  background: rgb(84 255 49 / 48%);
+  color: black;
+}
+
+}
+@media screen and (min-width: 700px) and (max-width: 1120px) {
+  .registrationPage img{
+    width: 50%;
+    height: 500px;
+   }
 }
