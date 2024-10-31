@@ -44,7 +44,7 @@ export default EventsCatPage;
 export async function getStaticPaths() {
  // this import is a promise that is resolved with async and await
 //  const {events_categories} = await import ('/data/data.json');
-const client = await new MongoClient("mongodb+srv://prueba:prueba@cluster0.mpljszi.mongodb.net/events?retryWrites=true&w=majority");
+const client = await new MongoClient("mongodb+srv://"+process.env.DB_USER +":"+process.env.DB_PASS +"@"+ process.env.CLUSTER +"/events?retryWrites=true&w=majority");
 const db = client.db()
 const GamesColection = db.collection('gametypes');
 const typedata = await GamesColection.find().toArray();
@@ -68,7 +68,7 @@ const allGameTypes = typedata.map(game => ({...game,_id:game._id.toString()}))
 export async function getStaticProps(context) {
   // this import is a promise that is resolved with async and await
 //   const {allGames} = await import ('/data/games.json');
-const client = await new MongoClient("mongodb+srv://prueba:prueba@cluster0.mpljszi.mongodb.net/events?retryWrites=true&w=majority");
+const client = await new MongoClient("mongodb+srv://"+process.env.DB_USER +":"+process.env.DB_PASS +"@"+ process.env.CLUSTER +"/events?retryWrites=true&w=majority");
 const db = client.db()
 
 const GamesColection = db.collection('mygames');

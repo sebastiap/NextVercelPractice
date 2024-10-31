@@ -37,7 +37,7 @@ export default GamesPage;
 export async function getStaticProps() {
   // this import is a promise that is resolved with async and await
 //   const {allGames} = await import ('/data/games.json');
-const client = await new MongoClient("mongodb+srv://prueba:prueba@cluster0.mpljszi.mongodb.net/events?retryWrites=true&w=majority");
+const client = await new MongoClient("mongodb+srv://"+process.env.DB_USER +":"+process.env.DB_PASS +"@"+ process.env.CLUSTER +"/events?retryWrites=true&w=majority");
 const db = client.db()
 
 const GamesColection = db.collection('gametypes');
