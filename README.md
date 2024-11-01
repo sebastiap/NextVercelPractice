@@ -1,4 +1,17 @@
+## About this project
+
+### Objective
+
+This site was developed as an event-oriented version of the Spika Games store, developed with Next and Mongo DB. A previous version was created in React and can be consulted on GitHub. The idea of ​​this project was to test Next routing and server side rendering. I have no plans to continue this project beyond visual fixes.
+
+Spika Games was born as an educational, recreational and personal project. Games have always been a safe place for me to develop socially and at the same time an oasis of tranquility in an increasingly chaoitic world. Now as an adult, I appreciate moments of relaxation with friends, sitting at a table, enjoying a new experience that isolates us for a while from the world around us.
+
+### Tech Stack
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+This project uses JSON for events and Mongo DB for the games.
+
 
 ## Getting Started
 
@@ -82,7 +95,7 @@ To access the endpoint on hello.js you can go to the path : http://localhost:300
 Since Next operates with Node, we can use the built in library "fs" to make syncronous and asyncronous operations with files.
 
 ### Operations on MongoBD
-With MongoClient we can use the mongodb site to connect to our own MongoDB database. See db-manager.js .
+With MongoClient we can use the mongodb site to connect to our own MongoDB database. See db-manager.js .You need an .env file to connect to mongoDB.
 
 ## Next/Head
 Next provides a special JSX tag for adding head elements to each page, which will change the title and info about that page. This is for helping the SEO.

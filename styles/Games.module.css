@@ -27,6 +27,11 @@ margin: 1%;
   width: 100%;
 }
 
+.GameGrid img{
+  max-width: 600px;
+  max-height: 400px;
+}
+
 .content {
 display: flex;
 font-size: 22px;
@@ -211,20 +216,25 @@ align-items:flex-start;
     grid-template-columns: 1fr;
     padding: 2rem;
     width: 100%;
+    max-width: fit-content;
     color: aliceblue;
     font-size: 1rem;
+    text-align: justify;
   }
   
   .GameGrid4 {
-    display: grid;
-    grid-template-columns: 1fr;
     padding: 2rem;
     gap:2rem;
     width: 80%;
   }
 
+  .GameGrid img{
+    width: 30vh;
+    height: 30vh;
+  }
+
   .content {
-    padding: 4rem;
+    /*padding: 4rem;*/
     color:yellowgreen;
   }
 

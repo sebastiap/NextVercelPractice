@@ -1,3 +1,4 @@
+
 .eventContainer {
   /* width: 100%; */
   display: flex;
@@ -17,6 +18,13 @@
   width: 1000px;
   height: 600px;
  }
+
+ .eventContainer img{
+  width: 1000px;
+  height: 600px;
+ }
+
+ 
 
 .eventContainer .link{
 margin: 1%;
@@ -75,8 +83,14 @@ text-align: center;
   padding: 2rem;
   /* padding-right: 0; */
   /* gap:0; */
-  width: 100%;
+  width: 90%;
 }
+
+.mainEvents img{
+  width: 50vh;
+  max-width: 100%;
+  height: 30vh;
+ }
 
 .content {
 display: flex;
@@ -84,6 +98,8 @@ font-size: 22px;
 flex-direction: column;
 justify-content: center;
 align-items:space-between;
+padding-right: 10vh;
+padding-left: 10vh;
 }
 
 .description {
@@ -254,13 +270,38 @@ align-items:space-between;
   }
 }
 
+@media (max-width: 800px) {
+
+  .mainEvents {
+    /* text-align: center; */
+    display: grid;
+    grid-template-columns: 35% auto;
+    padding: 2rem;
+    padding-right: 0; 
+    /* gap:0; */
+    width: 95%;
+  }
+
+
+}
 /* Mobile */
 @media (max-width: 700px) {
 
+  .mainEvents {
+    /* text-align: center; */
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-right: 0; 
+    width: 95%;
+    overflow: hidden;
+  }
+
 
   .registrationPage img{
-    width: 50%;
-    height: 30%;
+    max-height: 35vh;
+    max-width: 30vh;
+    height: 35vh;
+    width: 30vh;
    }
 
   .content {
@@ -272,17 +313,6 @@ align-items:space-between;
     margin-bottom: 120px;
     /*max-width: 320px;*/
     text-align: center;
-  }
-
-
-  .mainEvents {
-    /* text-align: center; */
-    display: grid;
-    grid-template-columns: 35% auto;
-    padding: 2rem;
-    padding-right: 0; 
-    /* gap:0; */
-    width: 100%;
   }
 
   .card {
@@ -352,6 +382,17 @@ align-items:space-between;
     background: rgb(84 255 49 / 48%);
     color: black;
   }
+
+    .eventContainer {
+      display: grid;
+      grid-template-columns: 1fr;
+      padding: 2rem;
+      width: 100%;
+      max-width: fit-content;
+      color:yellowgreen;
+      font-size: 1rem;
+      text-align: center;
+    }
 }
 
 /* Tablet and Smaller Desktop */
@@ -390,15 +431,36 @@ align-items:space-between;
 
 @media screen and (max-width: 435px)  {
 
-  .registrationPage img{
-    width: 50%;
-    height: 50%;
-   }
-  
 
-.mainEvents {
-  height: 88%;
-}
+  .eventContainer{
+    width: 80%;
+    height: 80%;
+   }
+
+   .eventContainer img{
+    width: 30vh;
+    height: 30vh;
+   }
+
+  .mainEvents {
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    padding-right: 0; 
+    width: 95%;
+    overflow: hidden;
+    height: 88%;
+  }
+
+  .mainEvents img{
+    /*width: 50%;*/
+    max-width: 100%;
+    height: 30vh;
+   }
+
+   .mainEvents .content2{
+    width: 1vh;
+   }
 
 .content{
   background: rgb(84 255 49 / 48%);
@@ -407,15 +469,26 @@ align-items:space-between;
 }
 
 .content2 {
-  padding: 2rem;
-  background: rgb(84 255 49 / 48%);
+  padding: 1.2rem;
+  background: #17bebb;
   color: black;
+ /* width: 1vh;*/
 }
+
 
 }
 @media screen and (min-width: 700px) and (max-width: 1120px) {
   .registrationPage img{
-    width: 50%;
-    height: 500px;
+    height: 35vh;
+    width: 30vh;
    }
+}
+
+@media only screen and (max-width: 600px) {
+  .registrationPage img{
+    height: 35vh;
+    width: 30vh;
+   }
+
+
 }

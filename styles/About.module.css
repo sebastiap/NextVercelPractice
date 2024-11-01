@@ -12,7 +12,7 @@
 }
 
 .aboutdiv p{
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -23,13 +23,16 @@
     flex-direction: column;
     justify-content:space-evenly;
     align-items:center;
-    
-    padding-left: 10%;
-    padding-right: 10%;
+    padding: 2rem;
   }
+
+  .aboutdiv p {
+
+    font-size: 2rem;
+ }
 }
 
-@media screen and (max-width: 835px) {
+@media screen and (max-width: 1023px) {
 
   .aboutdiv {
     color: #0A090C;
@@ -38,9 +41,13 @@
     flex-direction: column;
     justify-content:space-evenly;
     align-items:center;
-    
-    padding-left: 5%;
-    padding-right: 5%;
+    margin: 1vh;
+    padding: 5%;
+  }
+
+  .aboutdiv p {
+     margin: 1vh;
+     font-size: 1.5rem;
   }
   
 }

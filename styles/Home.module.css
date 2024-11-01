@@ -47,12 +47,14 @@
 
   .header {
     width: 100%;
-    font-size: 1rem;
+    height: 3vh;
+    font-size: 1.2rem;
+    color: #F7DBA7;
   }
   
   .footer {
     width: 100%;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     height: 10vh;
   }
   }

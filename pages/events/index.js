@@ -13,7 +13,7 @@ const EventsPage = ({data}) => {
                     <Link key={ev.id} href={`/events/${ev.id}`} className={Styles.mainEvents}>
                     
                         <div className="image">
-                        <Image width={600} height={400} alt={ev.title} src={ev.image} />
+                        <Image alt={ev.title} src={ev.image} />
                         </div>
                         <div className={Styles.content}>
                         <h2> {ev.title} </h2>

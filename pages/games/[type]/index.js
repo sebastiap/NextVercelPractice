@@ -20,7 +20,7 @@ const EventsCatPage = ({data,type}) => {
             {/* <Link legacyBehavior key={ev.id} href={`/events/${ev.id}`} passHref>
               <a> */}
                 <div className={index % 2?"image animate__animated animate__fadeInLeft":"image animate__animated animate__fadeInRight"}>
-                  <Image width={600} height={400} alt={ev.title} src={ev.image} />
+                  <Image alt={ev.title} src={ev.image} />
                 </div>
                 <div className={styles.content}>
                   <h2> {ev.title} </h2>
