@@ -19,7 +19,7 @@ const Home = ({data}) => {
                     <Link key={ev.id} href={`/events/${ev.id}`} className={Styles.mainEvents}>
                     
                         <div className={index % 2?"image animate__animated animate__fadeInLeft":"image animate__animated animate__fadeInRight"}>
-                        <Image width={600} height={400} alt={ev.title} src={ev.image} />
+                        <Image alt={ev.title} src={ev.image} />
                         </div>
                         <div className={Styles.content}>
                         <h2> {ev.title} </h2>

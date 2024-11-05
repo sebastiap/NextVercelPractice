@@ -36,9 +36,13 @@
   /* padding: 2rem; */
 }
 
-.mainEvents{
+.mainEvents img{
   margin-top: 1.5%;
   margin-bottom: 1.5%;
+  max-width: 600px;
+  width: 600px;
+  max-height: 400;
+  height: 400px;
 }
 
 
@@ -57,5 +61,22 @@
     font-size: 1.2rem;
     height: 10vh;
   }
+
+  .mainEvents img{
+    text-align: center;
+  }
+
+  .mainEvents img{
+    max-width: 30vh;
+    width: 30vh;
+    max-height: 20vh;
+    height: 20vh;
+  }
+
+  .content {
+    text-align: center;
+    margin: 2rem;
+  }
+
   }
   
